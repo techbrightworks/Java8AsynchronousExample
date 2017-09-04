@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="newsChannel">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="title"/>
+                <xs:element ref="description"/>
+                <xs:element ref="link"/>
+                <xs:element ref="newsItems"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="newsItems">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="item"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="item">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="title"/>
+                <xs:element ref="link"/>
+                <xs:element ref="description"/>
+                <xs:element ref="category"/>
+                <xs:element ref="pubDate"/>
+                <xs:element ref="guid"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="title" type="xs:string" />
+    <xs:element name="link" type="xs:anyURI" />
+    <xs:element name="description" type="xs:string" />
+    <xs:element name="category" type="xs:string" />
+    <xs:element name="pubDate" type="xs:date" />
+    <xs:element name="guid" type="xs:anyURI"/>
+</xs:schema>
